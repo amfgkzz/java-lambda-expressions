@@ -37,5 +37,12 @@ public class Main
 
         System.out.println("seabiscuit's fuel level " + seabiscuit.getFuelLevel());
         System.out.println("Kevin talk to me " + doug.speak());
+
+        System.out.println();
+
+        System.out.println("*** Abstract Classes ***");
+        HorseFromAbstractVehicle doodoo = new HorseFromAbstractVehicle("Anthony", 10);
+        doodoo.addFuel(10);
+        System.out.println("doodoo " + doodoo.getFuel());
     }
 }
