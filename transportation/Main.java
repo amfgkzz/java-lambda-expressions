@@ -99,5 +99,7 @@ public class Main
         // to sort from Z-A, high to low, v2 first then v1
         myList.sort((v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()));
         System.out.println(myList.toString());
+
+        // In a sort and filter situation, SORT FIRST then FILTER
     }
 }
