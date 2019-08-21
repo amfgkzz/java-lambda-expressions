@@ -14,6 +14,15 @@ public abstract class AbstractVehicle
         this.fuel = fuel;
     }
 
+    // IF this does not exist, by DEFAULT when creating a constructor in its child class WITHOUT 
+    // the given params like int like the one above AND in HorseFromAbstractVehicle 
+    // (has a two constructors one with required params n without) WILL THROW ERROR, 
+    // IF this constructor does exist, SET the REQUIRED int fuel to equal 1;
+    public AbstractVehicle()
+    {
+        fuel = 1;
+    }
+
     // REQUIRES: any class that extends/inherit from this abstract class has to implement these methods
     // abstract methods are NOT required for abstract classes, but if they are here have to USE them
     public abstract String getPath();

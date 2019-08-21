@@ -10,10 +10,11 @@ public class HorseFromAbstractVehicle extends AbstractVehicle
         this.name = name;
     }
 
-    // public HorseFromAbstractVehicle(String name)
-    // {
-    //     this.name = name;
-    // }
+    public HorseFromAbstractVehicle(String name)
+    {
+        // super(); // CALLS THIS BY DEFAULT FOR A CHILD CLASS when extending an abstract class <-- whether or not i have it
+        this.name = name;
+    }
 
     @Override
     public String getPath()
