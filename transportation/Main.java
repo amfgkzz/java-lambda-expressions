@@ -4,26 +4,20 @@ import java.util.*;
 
 public class Main
 {
-    // all method shortcuts
-    // typing -> pvm -> results in 
-    // private void name() {
-        
-    // }
+    // COMMON WAY OF FILTERING to a list -> public ArrayList<AbstractVehicle> filterList;
 
-    // typing -> pvstm -> results in
-    // private static Type name() {
-        
-    // }
-
-    // typing -> pbcm -> results in
-    // public void name() {
-        
-    // }
-
-    // typing -> pbcsm -> results in
-    // public static void name() {
-        
-    // }
+    // Never instantiate an object of Main, so this method HAS to be a class method AND HAS to be static
+    public static void printVehicles(ArrayList<AbstractVehicle> vehicles, CheckVehicle tester) 
+    {
+        for ( AbstractVehicle v : vehicles )
+        {
+            if ( tester.test(v) )
+            {
+                System.out.println(v);
+                // Add in more code to work, but this is a common way of filtering -> filterList.add(v);
+            }
+        }
+    }
 
     public static void main(String[] args)
     {
@@ -84,5 +78,24 @@ public class Main
 
         System.out.println(myList.toString());
         System.out.println();
+
+        System.out.println("*** Lambda Expressions ***");
+        System.out.println();
+        // filtering
+        printVehicles(myList, v -> v.getFuel() < 10); // THIS IS " -> " A LAMBDA EXPRESSION, 
+        // IT WILL RETURN A BOOLEAN FOR ALL THE VEHICLES ON WHETHER THEY ARE BELOW 10 OR NOT
+        // THAT GET FUEL LEVEL < 10 IS THE TEST!!! 
+        System.out.println();
+        printVehicles(myList, v -> v.getFuel() >= 10);
+        System.out.println();
+        // filter fuel < 10, and are horse
+        printVehicles(myList, v -> (v.getFuel() < 10) && (v instanceof HorseFromAbstractVehicle)); // instance of this particular class
+        
+        System.out.println();
+        myList.forEach((v) -> System.out.println(v));
+        System.out.println();
+
+        // myList.sort((v1, v2) -> )
+
     }
 }
