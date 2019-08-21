@@ -4,7 +4,10 @@ package transportation;
 // 
 public abstract class AbstractVehicle
 {
-    private int fuel;
+    // changed from private to protected
+    // protected means that THIS current class AND ALL of its childs know about it too
+    // (like public but restricted not as harsh as private though)
+    protected int fuel;
 
     public AbstractVehicle(int fuel)
     {
