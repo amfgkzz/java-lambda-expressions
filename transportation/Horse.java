@@ -21,31 +21,43 @@ public class Horse implements Animal, Vehicle // implementing usually means an i
         this.name = name;
     }
 
+    // getters n setters
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
     // implement the animal interface
     // sidenote - HAVE TO USE OVERRIDE because we defaulted the interface (they have no public/private)
     @Override
     public void move()
     {
-
+        // I decided that when a horse moves, it loses 1 fuel level
+        fuel = fuel - 1;
     }
 
     @Override
     public void eat(int taco)
     {
-
+        fuel = fuel + taco;
     }
 
     @Override
     public String speak()
     {
-
+        return "Neigh";
     }
 
     // implement the vehicle interface
     @Override
     public String getPath()
     {
-
+        return "Grass";
     }
 
     // CAN ONLY DECLARE IT ONCE BECAUSE THE PARAMS ARE THE SAME IF THEY R DIFFERENT CAN DECLARE TWICE
@@ -58,12 +70,12 @@ public class Horse implements Animal, Vehicle // implementing usually means an i
     @Override
     public int getFuelLevel()
     {
-
+        return fuel;
     }
 
     @Override
     public void addFuel(int fuel)
     {
-
+        eat(fuel); // Calling a method INSIDE of a method, which is fine
     }
 }
