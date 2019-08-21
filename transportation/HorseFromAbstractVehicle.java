@@ -31,6 +31,6 @@ public class HorseFromAbstractVehicle extends AbstractVehicle
     @Override
     public String toString()
     {
-        return "HorseFromAbstractVehicle{"+ "name='" + name + '\'' + ", fuel=" + fuel + '}';
+        return "HorseFromAbstractVehicle {"+ "name='" + name + '\'' + ", fuel=" + fuel + '}';
     }
 }
